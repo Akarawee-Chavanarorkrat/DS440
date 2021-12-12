@@ -1,0 +1,138 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-grey.css">
+<script src="https://www.w3schools.com/lib/w3.js"></script>
+<title>Study with Me Voice Puppetery 30 Minutes</title>
+<script>
+    function zoomin(){
+        var myImg = document.getElementById("sky");
+        var currWidth = myImg.clientWidth;
+        if(currWidth == 1900){
+            alert("Maximum zoom-in level reached.");
+        } else{
+            myImg.style.width = (currWidth + 700) + "px";
+
+        } 
+    }
+    function zoomout(){
+        var myImg = document.getElementById("sky");
+        var currWidth = myImg.clientWidth;
+        if(currWidth == 1200){
+            alert("Maximum zoom-out level reached.");
+        } else{
+            myImg.style.width = (currWidth - 700) + "px";
+			
+        }
+    }
+	function myFunction() {
+  var x = document.getElementById("myDIV");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+} 
+</script>
+	
+	</head>
+<style>
+.right {
+  float: right;
+  width: 700px;
+}
+.left {
+  float: left;
+  width: 1200px;
+}
+</style>
+	
+<body>
+<div style="display:none">
+<audio controls autoplay>
+ <source src="Crowd Noise 1 Hour White Noise.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio> 
+	</div>
+</body>
+<body1>
+
+<p id="demo"></p>
+
+<article class="clock" id="model3">
+
+  <div class="count">
+	  <h1><center><div id="timer"></div></center></h1>
+  </div>
+</article>
+<script src="./Countdowntimer.js"></script>	
+
+</body1>
+<body2>
+<div class="left">
+    <p>
+        <button type="button" onclick="zoomin()">Zoom In</button>
+        <button type="button" onclick="zoomout()">Zoom Out</button>
+		<button onclick="myFunction()">Hide</button>
+    </p>
+    <img src="Test Gif.gif" id="sky" width="1200" alt="Cloudy Sky">
+	</div>
+	</body2>
+	<body3>
+<div id="myDIV">
+<h1 class="text-light">Text to Speech</h1>
+    <p>Select Voice</p>
+        <!-- Select Menu for Voice -->
+    <select id="voices"></select>
+    <!-- Range Slliders for Volume, Rate & Pitch -->
+    <div class="d-flex mt-4 text-light">
+      <div>
+        <p class="lead">Volume</p>
+        <input type="range" min="0" max="100" value="100" step="10" id="volume" />
+        <span id="volume-label" class="ms-2">100</span>
+      </div>
+      <div class="mx-5">
+        <p class="lead">Rate</p>
+        <input type="range" min="0.1" max="10" value=".8" id="rate" step="0.1" />
+        <span id="rate-label" class="ms-2">.8</span>
+      </div>
+      <div>
+        <p class="lead">Pitch</p>
+        <input type="range" min="0" max="4" value="2" step="0.1" id="pitch" />
+        <span id="pitch-label" class="ms-2">2</span>
+      </div>
+    </div>
+
+    <!-- Text Area  for the User to Type -->
+    <textarea class ="textbox" cols="60" rows="10" placeholder="Paste the Text here....." id ="output"></textarea>
+	<div>
+    <!-- Control Buttons -->
+      <button id="start">Start</button>
+      <button id="pause">Pause</button>
+      <button id="resume">Resume</button>
+      <button id="cancel">Cancel</button>
+	    <input type="file" name="inputfile"
+            id="inputfile">
+		<script type="text/javascript">
+        document.getElementById('inputfile')
+            .addEventListener('change', function() {
+              
+            var fr=new FileReader();
+            fr.onload=function(){
+                document.getElementById('output')
+                        .textContent=fr.result;
+            }
+              
+            fr.readAsText(this.files[0]);
+        })
+    </script>
+
+
+	</div>
+		</div>
+</body3>
+<script src="./textToSpeech.js"></script>
+</html>
+
